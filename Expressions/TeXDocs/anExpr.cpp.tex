@@ -1,0 +1,142 @@
+\BeginCppCode
+{\BBC}/**
+\BL
+  *File: anExpr.cpp
+\BL
+  *Description:
+\BL
+   this file implements the class anExpr
+\BL
+  *Version: 1.0
+\BL
+  *Dependencies:
+\BL
+  *Authors: Premalatha, Vidyadhar Mudkavi, CTFD, NAL
+\BL
+  *Date: 27 August 1999
+  */{\EBC}
+\BL
+{\BLC}// system includes{\ELC}
+\BL
+{\BLC}// local includes{\ELC}
+\Hinclud {\dq}anExpr.h{\dq}
+\Hinclud {\dq}intNode.h{\dq}
+\Hinclud {\dq}unaryNode.h{\dq}
+\Hinclud {\dq}binaryNode.h{\dq}
+\BL
+{\BLC}// const declarations{\ELC}
+\BL
+{\BLC}// function prototypes{\ELC}
+\BL
+{\BLC}// forward declarations{\ELC}
+\BL
+{\BLC}// begin class implementation{\ELC}
+   {\BLC}////////////////////////////////////////{\ELC}
+   {\BLC}//                                      {\ELC}
+   {\BLC}//    implement constructors here       {\ELC}
+   {\BLC}//                                      {\ELC}
+   {\BLC}//                                      {\ELC}
+\BL
+{\BBC}/**
+   default constructor
+  */{\EBC}
+anExpr::anExpr()
+   : pv_en(0)
+{\ob}
+{\cb}
+\BL
+{\BBC}/**
+   copy constructor
+  */{\EBC}
+anExpr::anExpr(\Cons anExpr& expr)
+   : pv_en(expr.pv_en), pv_uc(expr.pv_uc)
+{\ob}
+{\cb}
+\BL
+\BL
+{\BBC}/**
+   constructor to create integer node
+  */{\EBC}
+anExpr::anExpr(\In n)
+{\ob}
+   \I ( n == exprType::unary)
+   {\ob}
+      pv_en = \Ne unaryNode({\dq}-{\dq}, 0);
+      \Retur;
+   {\cb}
+\BL
+   pv_en = \Ne intNode(n);
+{\cb}
+\BL
+{\BBC}/**
+  */{\EBC}
+anExpr::anExpr(\Cons aString& op, anExpr e)
+{\ob}
+   pv_en = \Ne unaryNode(op, e);
+{\cb}
+\BL
+{\BBC}/**
+  */{\EBC}
+anExpr::anExpr(\Cons aString& op, anExpr left, anExpr right)
+{\ob}
+   pv_en = \Ne binaryNode(op, left, right);
+{\cb}
+\BL
+\BL
+   {\BLC}////////////////////////////////////////{\ELC}
+   {\BLC}//                                      {\ELC}
+   {\BLC}//    implement assignment operators    {\ELC}
+   {\BLC}//                                      {\ELC}
+   {\BLC}//                                      {\ELC}
+\BL
+anExpr& anExpr::operator=(\Cons anExpr& expr)
+{\ob}
+   \I ( pv_uc.isAttachingTo(expr.pv_uc) )
+   {\ob}
+      {\BLC}// delete data contained in the handle{\ELC}
+      \Delet pv_en;
+   {\cb}
+\BL
+   pv_en = expr.pv_en;
+\BL
+   \Retur *\Thi;
+{\cb}
+\BL
+   {\BLC}////////////////////////////////////////{\ELC}
+   {\BLC}//                                      {\ELC}
+   {\BLC}//    implement the destructor          {\ELC}
+   {\BLC}//                                      {\ELC}
+   {\BLC}//                                      {\ELC}
+\BL
+anExpr::~anExpr()
+{\ob}
+   \I ( pv_uc.isOnlyInstance() )
+   {\ob}
+      \Delet pv_en;
+   {\cb}
+{\cb}
+\BL
+   {\BLC}////////////////////////////////////////////{\ELC}
+   {\BLC}//                                          {\ELC}
+   {\BLC}//   implement other member functions here  {\ELC}
+   {\BLC}//                                          {\ELC}
+   {\BLC}//                                          {\ELC}
+\BL
+{\BBC}/**
+   the output is handled directly by the handles
+  */{\EBC}
+ostream& \Operato¡¡(ostream& os, \Cons anExpr& en)
+{\ob}
+   en.pv_en-¿Print(os);
+   \Retur os;
+{\cb}
+\BL
+\BL
+{\BBC}/**
+   this function evaluates the expression
+  */{\EBC}
+\In anExpr::Evaluate() \Cons
+{\ob}
+   \Retur pv_en-¿Evaluate();
+{\cb}
+\EndCppCode

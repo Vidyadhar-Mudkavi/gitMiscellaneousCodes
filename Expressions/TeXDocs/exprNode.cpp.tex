@@ -1,0 +1,80 @@
+\BeginCppCode
+{\BBC}/**
+\BL
+  *File: exprNode.cpp
+\BL
+  *Description:
+\BL
+   this file implements the class exprNode. exprNode is
+   a base class and is never instantiated. it is therefore
+   an abstract class.
+\BL
+  *Version: 1.0
+\BL
+  *Dependencies:
+\BL
+  *Authors: Premalatha, Vidyadhar Mudkavi, CTFD, NAL
+\BL
+  *Date: 27 August 1999
+  */{\EBC}
+\BL
+{\BLC}// system includes{\ELC}
+\BL
+{\BLC}// local includes{\ELC}
+\Hinclud {\dq}exprNode.h{\dq}
+\Hinclud {\dq}anExpr.h{\dq}
+\BL
+{\BLC}// const declarations{\ELC}
+\BL
+{\BLC}// function prototypes{\ELC}
+\BL
+{\BLC}// forward declarations{\ELC}
+\BL
+{\BLC}// begin class implementation{\ELC}
+   {\BLC}////////////////////////////////////////{\ELC}
+   {\BLC}//                                      {\ELC}
+   {\BLC}//    implement constructors here       {\ELC}
+   {\BLC}//                                      {\ELC}
+   {\BLC}//                                      {\ELC}
+\BL
+{\BBC}/**
+   default constructor
+  */{\EBC}
+exprNode::exprNode()
+{\ob}
+{\cb}
+\BL
+{\BBC}/**
+   copy constructor
+  */{\EBC}
+exprNode::exprNode(\Cons exprNode& class_var)
+{\ob}
+{\cb}
+\BL
+   {\BLC}////////////////////////////////////////{\ELC}
+   {\BLC}//                                      {\ELC}
+   {\BLC}//    implement assignment operators    {\ELC}
+   {\BLC}//                                      {\ELC}
+   {\BLC}//                                      {\ELC}
+\BL
+exprNode& exprNode::operator=(\Cons exprNode& class_var)
+{\ob}
+   \Retur *\Thi;
+{\cb}
+\BL
+   {\BLC}////////////////////////////////////////{\ELC}
+   {\BLC}//                                      {\ELC}
+   {\BLC}//    implement the destructor          {\ELC}
+   {\BLC}//                                      {\ELC}
+   {\BLC}//                                      {\ELC}
+\BL
+exprNode::~exprNode()
+{\ob}
+{\cb}
+\BL
+   {\BLC}////////////////////////////////////////////{\ELC}
+   {\BLC}//                                          {\ELC}
+   {\BLC}//   implement other member functions here  {\ELC}
+   {\BLC}//                                          {\ELC}
+   {\BLC}//                                          {\ELC}
+\EndCppCode

@@ -1,0 +1,96 @@
+\BeginCppCode
+\Hifnde _ANEXPR_
+\Hdefin _ANEXPR_
+{\BBC}/**
+\BL
+  *File: anExpr.h
+\BL
+  *Description:
+\BL
+   this file declares class anExpr. this is a handle class
+   with use count and is capable of attaching to any object of
+   the classes derived from exprNode.
+\BL
+  *Version: 1.0
+\BL
+  *Dependencies:
+\BL
+  *Authors: Premalatha, Vidyadhar Mudkavi, CTFD, NAL
+\BL
+  *Date: 27 August 1999
+  */{\EBC}
+\BL
+{\BLC}// system includes{\ELC}
+\BL
+{\BLC}// local includes{\ELC}
+\Hinclud {\dq}useCount.h{\dq}
+\Hinclud {\dq}aString.h{\dq}
+\BL
+{\BLC}// const declarations{\ELC}
+\Struc exprType
+{\ob}
+   \Enu expr_type
+   {\ob}
+      unary   = 0x01,
+      binary  = 0x02,
+      integer = 0x03
+   {\cb};
+{\cb};
+\BL
+{\BLC}// function prototypes{\ELC}
+\BL
+{\BLC}// forward declarations{\ELC}
+\Clas exprNode;
+\BL
+{\BLC}// begin class declaration{\ELC}
+\Clas anExpr
+{\ob}
+   \Frien \Clas exprNode;
+   \Frien ostream& \Operato¡¡(ostream& os, \Cons anExpr& en);
+\BL
+   public:
+\BL
+   {\BLC}// constructors{\ELC}
+      anExpr();                                    {\BLC}// default{\ELC}
+      anExpr(\Cons anExpr& expr);
+      anExpr(\In i);                               {\BLC}// integer expr{\ELC}
+      anExpr(\Cons aString& s, anExpr expr);       {\BLC}// unary expr{\ELC}
+      anExpr(\Cons aString& s,                     {\BLC}// binary expr{\ELC}
+             anExpr left_expr, anExpr right_expr);
+\BL
+   {\BLC}// assignment operator{\ELC}
+      anExpr& operator=(\Cons anExpr& expr);
+\BL
+   {\BLC}// destructor{\ELC}
+      ~anExpr();
+\BL
+   {\BLC}// function to evaluate the expression{\ELC}
+      \In Evaluate() \Cons;
+\BL
+   protected:
+\BL
+   private:
+\BL
+   {\BLC}// add use counter{\ELC}
+      useCount pv_uc;
+\BL
+   {\BLC}// the data to which this points{\ELC}
+      exprNode* pv_en;
+{\cb};
+\BL
+{\BLC}// include any inline code here{\ELC}
+\BL
+{\BBC}/**
+   declare any typedef statements here
+     ex: typedef aVortex areVortices;
+   so that we can declare
+     areVortices v1, v2, v3;
+  */{\EBC}
+                              {\BLC}//                 {\ELC}
+                              {\BLC}//      {\bs}{\bs}^//      {\ELC}
+                              {\BLC}//     o(!_!)o     {\ELC}
+                              {\BLC}// --m--  o  --m-- {\ELC}
+                              {\BLC}//                 {\ELC}
+\BL
+\Hendi {\BLC}//_ANEXPR_{\ELC}
+\EndCppCode

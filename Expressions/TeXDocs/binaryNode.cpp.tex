@@ -1,0 +1,133 @@
+\BeginCppCode
+{\BBC}/**
+\BL
+  *File: binaryNode.cpp
+\BL
+  *Description:
+\BL
+   this file implements the class binaryNode
+\BL
+  *Version: 1.0
+\BL
+  *Dependencies:
+\BL
+  *Authors: Premalatha, Vidyadhar Mudkavi, CTFD, NAL
+\BL
+  *Date:
+  */{\EBC}
+\BL
+{\BLC}// system includes{\ELC}
+\BL
+{\BLC}// local includes{\ELC}
+\Hinclud {\dq}binaryNode.h{\dq}
+\BL
+{\BLC}// const declarations{\ELC}
+\BL
+{\BLC}// function prototypes{\ELC}
+\BL
+{\BLC}// forward declarations{\ELC}
+\BL
+{\BLC}// begin class implementation{\ELC}
+   {\BLC}////////////////////////////////////////{\ELC}
+   {\BLC}//                                      {\ELC}
+   {\BLC}//    implement constructors here       {\ELC}
+   {\BLC}//                                      {\ELC}
+   {\BLC}//                                      {\ELC}
+\BL
+\Hi 0 {\BLC}// no default behaviour{\ELC}
+{\BBC}/**
+   default constructor
+  */{\EBC}
+binaryNode::binaryNode()
+{\ob}
+{\cb}
+\Hendi
+\BL
+\Hi 0 {\BLC}// no copy construction{\ELC}
+{\BBC}/**
+   copy constructor
+  */{\EBC}
+binaryNode::binaryNode(\Cons binaryNode& class_var)
+{\ob}
+{\cb}
+\Hendi
+\BL
+\BL
+binaryNode::binaryNode(\Cons aString& op, anExpr left, anExpr right)
+: pv_operator(op), pv_left(left), pv_right(right)
+{\ob}
+{\cb}
+\BL
+\Hi 0 {\BLC}// no assignment{\ELC}
+   {\BLC}////////////////////////////////////////{\ELC}
+   {\BLC}//                                      {\ELC}
+   {\BLC}//    implement assignment operators    {\ELC}
+   {\BLC}//                                      {\ELC}
+   {\BLC}//                                      {\ELC}
+\BL
+binaryNode& binaryNode::operator=(\Cons binaryNode& class_var)
+{\ob}
+   \Retur *\Thi;
+{\cb}
+\Hendi
+\BL
+   {\BLC}////////////////////////////////////////{\ELC}
+   {\BLC}//                                      {\ELC}
+   {\BLC}//    implement the destructor          {\ELC}
+   {\BLC}//                                      {\ELC}
+   {\BLC}//                                      {\ELC}
+\BL
+binaryNode::~binaryNode()
+{\ob}
+{\BLC}// empty{\ELC}
+{\cb}
+\BL
+   {\BLC}////////////////////////////////////////////{\ELC}
+   {\BLC}//                                          {\ELC}
+   {\BLC}//   implement other member functions here  {\ELC}
+   {\BLC}//                                          {\ELC}
+   {\BLC}//                                          {\ELC}
+\BL
+{\BBC}/**
+   the output function
+  */{\EBC}
+\BL
+\Voi binaryNode::Print(ostream& os) \Cons
+{\ob}
+   os 　 {\dq}({\dq} 　 pv_left 　 pv_operator 　 pv_right 　 {\dq}){\dq};
+{\cb}
+\BL
+{\BBC}/**
+   function to evaluate the expression
+  */{\EBC}
+\BL
+\In binaryNode::Evaluate() \Cons
+{\ob}
+   \In op1 = pv_left.Evaluate();
+   \In op2 = pv_right.Evaluate();
+\BL
+   \I ( pv_operator == {\dq}-{\dq} )
+   {\ob}
+      \Retur op1 - op2;
+   {\cb}
+\BL
+   \I ( pv_operator == {\dq}+{\dq} )
+   {\ob}
+      \Retur op1 + op2;
+   {\cb}
+\BL
+   \I ( pv_operator == {\dq}*{\dq} )
+   {\ob}
+      \Retur op1 * op2;
+   {\cb}
+\BL
+   \I ( pv_operator == {\dq}/{\dq} && op2 != 0 )
+   {\ob}
+      \Retur op1 / op2;
+   {\cb}
+\BL
+   \Thro {\dq}Error. Bad \Operato {\dq} + pv_operator + {\dq}in binaryNode{\dq};
+\BL
+   \Retur 0;
+{\cb}
+\EndCppCode

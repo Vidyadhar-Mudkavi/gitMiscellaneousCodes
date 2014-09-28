@@ -1,0 +1,83 @@
+\BeginCppCode
+\Hifnde _EXPRNODE_
+\Hdefin _EXPRNODE_
+{\BBC}/**
+\BL
+  *File: exprNode.h
+\BL
+  *Description:
+\BL
+   this file declares class exprNode. this example
+   is from {\dq}Ruminations on C++{\dq} by Koenig and Moo, Chapter 8.
+\BL
+   this is an abstract class and hence has no implementation.
+\BL
+  *Version: 1.0
+\BL
+  *Dependencies:
+\BL
+  *Authors: Premalatha, Vidyadhar Mudkavi, CTFD, NAL
+\BL
+  *Date: 27 august 1999
+  */{\EBC}
+\BL
+{\BLC}// system includes{\ELC}
+\Hinclud ¡iostream.h¿
+\BL
+{\BLC}// local includes{\ELC}
+\BL
+{\BLC}// const declarations{\ELC}
+\BL
+{\BLC}// function prototypes{\ELC}
+\BL
+{\BLC}// forward declarations{\ELC}
+\Clas anExpr;
+\BL
+{\BLC}// begin class declaration{\ELC}
+\Clas exprNode
+{\ob}
+{\BLC}// the handle class is a friend{\ELC}
+   \Frien \Clas anExpr;
+   \Frien ostream& \Operato¡¡(ostream&, \Cons anExpr&);
+\BL
+   public:
+\BL
+   protected:
+\BL
+   {\BLC}// constructors{\ELC}
+      exprNode(); {\BLC}// default{\ELC}
+\BL
+   {\BLC}// destructor{\ELC}
+      \Virtua ~exprNode();
+\BL
+   {\BLC}// a print function to display the object{\ELC}
+      \Virtua \Voi Print(ostream& os) \Cons = 0;
+\BL
+   {\BLC}// function to evaluate the expression{\ELC}
+      \Virtua \In Evaluate() \Cons = 0;
+\BL
+   private:
+   {\BLC}// constructors not implemented{\ELC}
+      exprNode(\Cons exprNode& en);
+\BL
+   {\BLC}// assignment operator not implemented{\ELC}
+      exprNode& operator=(\Cons exprNode& en);
+\BL
+{\cb};
+\BL
+{\BLC}// include any inline code here{\ELC}
+\BL
+{\BBC}/**
+   declare any typedef statements here
+     ex: typedef aVortex areVortices;
+   so that we can declare
+     areVortices v1, v2, v3;
+  */{\EBC}
+                              {\BLC}//                 {\ELC}
+                              {\BLC}//      {\bs}{\bs}^//      {\ELC}
+                              {\BLC}//     o(!_!)o     {\ELC}
+                              {\BLC}// {-}-m{-}-  o  {-}-m{-}- {\ELC}
+                              {\BLC}//                 {\ELC}
+\BL
+\Hendi {\BLC}//_EXPRNODE_{\ELC}
+\EndCppCode

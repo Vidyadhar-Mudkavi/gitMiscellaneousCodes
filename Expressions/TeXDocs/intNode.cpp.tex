@@ -1,0 +1,109 @@
+\BeginCppCode
+{\BBC}/**
+\BL
+  *File: intNode.cpp
+\BL
+  *Description:
+\BL
+   this file implements the class intNode
+\BL
+  *Version: 1.0
+\BL
+  *Dependencies:
+\BL
+  *Authors: Premalatha, Vidyadhar Mudkavi, CTFD, NAL
+\BL
+  *Date:
+  */{\EBC}
+\BL
+{\BLC}// system includes{\ELC}
+\BL
+{\BLC}// local includes{\ELC}
+\Hinclud {\dq}intNode.h{\dq}
+\BL
+{\BLC}// const declarations{\ELC}
+\BL
+{\BLC}// function prototypes{\ELC}
+\BL
+{\BLC}// forward declarations{\ELC}
+\BL
+{\BLC}// begin class implementation{\ELC}
+   {\BLC}////////////////////////////////////////{\ELC}
+   {\BLC}//                                      {\ELC}
+   {\BLC}//    implement constructors here       {\ELC}
+   {\BLC}//                                      {\ELC}
+   {\BLC}//                                      {\ELC}
+\BL
+\Hi 0 {\BLC}// has no default behaviour{\ELC}
+{\BBC}/**
+   default constructor
+  */{\EBC}
+intNode::intNode()
+{\ob}
+{\cb}
+\Hendi
+\BL
+intNode::intNode(\In n)
+   : pv_n(n)
+{\ob}
+{\cb}
+\BL
+\Hi 0 {\BLC}// no copy constructor{\ELC}
+{\BBC}/**
+   copy constructor
+  */{\EBC}
+intNode::intNode(\Cons intNode& in)
+   : pv_n(in.pv_n)
+{\ob}
+{\cb}
+\Hendi
+\BL
+\Hi 0 {\BLC}// no assignment is needed{\ELC}
+   {\BLC}////////////////////////////////////////{\ELC}
+   {\BLC}//                                      {\ELC}
+   {\BLC}//    implement assignment operators    {\ELC}
+   {\BLC}//                                      {\ELC}
+   {\BLC}//                                      {\ELC}
+\BL
+intNode& intNode::operator=(\Cons intNode& in)
+{\ob}
+\BL
+   \Retur *\Thi;
+{\cb}
+\Hendi
+\BL
+\Hi 0 {\BLC}// no destructor necessary{\ELC}
+   {\BLC}////////////////////////////////////////{\ELC}
+   {\BLC}//                                      {\ELC}
+   {\BLC}//    implement the destructor          {\ELC}
+   {\BLC}//                                      {\ELC}
+   {\BLC}//                                      {\ELC}
+\BL
+intNode::~intNode()
+{\ob}
+{\cb}
+\Hendi
+\BL
+   {\BLC}////////////////////////////////////////////{\ELC}
+   {\BLC}//                                          {\ELC}
+   {\BLC}//   implement other member functions here  {\ELC}
+   {\BLC}//                                          {\ELC}
+   {\BLC}//                                          {\ELC}
+\BL
+{\BBC}/**
+   printing or output routine
+  */{\EBC}
+\Voi intNode::Print(ostream& os) \Cons
+{\ob}
+   os ¡¡ pv_n;
+{\cb}
+\BL
+{\BBC}/**
+   function to evaluate the expression
+  */{\EBC}
+\BL
+\In intNode::Evaluate() \Cons
+{\ob}
+   \Retur pv_n;
+{\cb}
+\EndCppCode

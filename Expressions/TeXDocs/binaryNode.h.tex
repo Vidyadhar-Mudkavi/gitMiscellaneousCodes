@@ -1,0 +1,88 @@
+\BeginCppCode
+\Hifnde _BINARYNODE_
+\Hdefin _BINARYNODE_
+{\BBC}/**
+\BL
+  *File: binaryNode.h
+\BL
+  *Description:
+\BL
+   this file declares class binaryNode
+\BL
+  *Version: 1.0
+\BL
+  *Dependencies:
+\BL
+  *Authors: Premalatha, Vidyadhar Mudkavi, CTFD, NAL
+\BL
+  *Date:
+  */{\EBC}
+\BL
+{\BLC}// system includes{\ELC}
+\BL
+{\BLC}// local includes{\ELC}
+\Hinclud {\dq}exprNode.h{\dq}
+\Hinclud {\dq}aString.h{\dq}
+\Hinclud {\dq}anExpr.h{\dq}
+\BL
+{\BLC}// const declarations{\ELC}
+\BL
+{\BLC}// function prototypes{\ELC}
+\BL
+{\BLC}// forward declarations{\ELC}
+\BL
+{\BLC}// begin class declaration{\ELC}
+\Clas binaryNode : \Publi exprNode
+{\ob}
+{\BLC}// the handle class is a friend{\ELC}
+   \Frien \Clas anExpr;
+\BL
+   public:
+\BL
+   protected:
+\BL
+   private:
+   {\BLC}// constructors{\ELC}
+\Hi 0 {\BLC}// no default behaviour or special construction{\ELC}
+      binaryNode(); {\BLC}// default{\ELC}
+      binaryNode(\Cons binaryNode& class_var);
+\Hendi
+   {\BLC}// the only constructor is{\ELC}
+      binaryNode(\Cons aString& op, anExpr left, anExpr right);
+\BL
+\Hi 0 {\BLC}// no assignment needed{\ELC}
+   {\BLC}// assignment operator{\ELC}
+      binaryNode& operator=(\Cons binaryNode& class_var);
+\Hendi
+\BL
+   {\BLC}// destructor{\ELC}
+      ~binaryNode();
+\BL
+   {\BLC}// output{\ELC}
+      \Voi Print(ostream& os) \Cons;
+\BL
+   {\BLC}// function to evaluate the expression{\ELC}
+      \In Evaluate() \Cons;
+\BL
+   {\BLC}// data{\ELC}
+      aString pv_operator;
+      anExpr  pv_left;
+      anExpr  pv_right;
+{\cb};
+\BL
+{\BLC}// include any inline code here{\ELC}
+\BL
+{\BBC}/**
+   declare any typedef statements here
+     ex: typedef aVortex areVortices;
+   so that we can declare
+     areVortices v1, v2, v3;
+  */{\EBC}
+                              {\BLC}//                 {\ELC}
+                              {\BLC}//      {\bs}{\bs}^//      {\ELC}
+                              {\BLC}//     o(!_!)o     {\ELC}
+                              {\BLC}// --m--  o  --m-- {\ELC}
+                              {\BLC}//                 {\ELC}
+\BL
+\Hendi {\BLC}//_BINARYNODE_{\ELC}
+\EndCppCode

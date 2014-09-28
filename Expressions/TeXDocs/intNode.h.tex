@@ -1,0 +1,72 @@
+\BeginCppCode
+\Hifnde _INTNODE_
+\Hdefin _INTNODE_
+{\BBC}/**
+\BL
+  *File: intNode.h
+\BL
+  *Description:
+\BL
+   this file declares class intNode
+\BL
+  *Version: 1.0
+\BL
+  *Dependencies:
+\BL
+  *Authors: Premalatha, Vidyadhar Mudkavi, CTFD, NAL
+\BL
+  *Date:
+  */{\EBC}
+\BL
+{\BLC}// system includes{\ELC}
+\BL
+{\BLC}// local includes{\ELC}
+\Hinclud {\dq}exprNode.h{\dq}
+\BL
+{\BLC}// const declarations{\ELC}
+\BL
+{\BLC}// function prototypes{\ELC}
+\BL
+{\BLC}// forward declarations{\ELC}
+\BL
+{\BLC}// begin class declaration{\ELC}
+\Clas intNode : \Publi exprNode
+{\ob}
+{\BLC}// make the handle a friend{\ELC}
+   \Frien \Clas anExpr;
+\BL
+   private:
+   {\BLC}// constructors{\ELC}
+   {\BLC}// no default behaviour{\ELC}
+   {\BLC}// no copy construction{\ELC}
+      intNode(\In n);
+\BL
+   {\BLC}// no assignment operator{\ELC}
+   {\BLC}// no destructor needed{\ELC}
+\BL
+   {\BLC}// output{\ELC}
+      \Voi Print(ostream& os) \Cons;
+\BL
+   {\BLC}// function to evaluate the expression{\ELC}
+      \In Evaluate() \Cons;
+\BL
+   {\BLC}// data{\ELC}
+      \In pv_n;
+{\cb};
+\BL
+{\BLC}// include any inline code here{\ELC}
+\BL
+{\BBC}/**
+   declare any typedef statements here
+     ex: typedef aVortex areVortices;
+   so that we can declare
+     areVortices v1, v2, v3;
+  */{\EBC}
+                              {\BLC}//                 {\ELC}
+                              {\BLC}//      {\bs}{\bs}^//      {\ELC}
+                              {\BLC}//     o(!_!)o     {\ELC}
+                              {\BLC}// --m--  o  --m-- {\ELC}
+                              {\BLC}//                 {\ELC}
+\BL
+\Hendi {\BLC}//_INTNODE_{\ELC}
+\EndCppCode

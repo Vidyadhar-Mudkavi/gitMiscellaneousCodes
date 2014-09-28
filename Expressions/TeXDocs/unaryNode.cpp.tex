@@ -1,0 +1,119 @@
+\BeginCppCode
+{\BBC}/**
+\BL
+  *File: unaryNode.cpp
+\BL
+  *Description:
+\BL
+   this file implements the class unaryNode
+\BL
+  *Version: 1.0
+\BL
+  *Dependencies:
+\BL
+  *Authors: Premalatha, Vidyadhar Mudkavi, CTFD, NAL
+\BL
+  *Date:
+  */{\EBC}
+\BL
+{\BLC}// system includes{\ELC}
+\BL
+{\BLC}// local includes{\ELC}
+\Hinclud {\dq}unaryNode.h{\dq}
+\BL
+{\BLC}// const declarations{\ELC}
+\BL
+{\BLC}// function prototypes{\ELC}
+\BL
+{\BLC}// forward declarations{\ELC}
+\BL
+{\BLC}// begin class implementation{\ELC}
+   {\BLC}////////////////////////////////////////{\ELC}
+   {\BLC}//                                      {\ELC}
+   {\BLC}//    implement constructors here       {\ELC}
+   {\BLC}//                                      {\ELC}
+   {\BLC}//                                      {\ELC}
+\Hi 0 {\BLC}// no default behaviour{\ELC}
+{\BBC}/**
+   default constructor
+  */{\EBC}
+unaryNode::unaryNode()
+{\ob}
+   \Thro {\dq}This is not invoked!{\dq};
+{\cb}
+\Hendi
+\BL
+unaryNode::unaryNode(\Cons aString& op, anExpr expr)
+   : pv_operator(op), pv_operand(expr)
+{\ob}
+{\cb}
+\BL
+\Hi 0 {\BLC}// no copy construction{\ELC}
+{\BBC}/**
+   copy constructor
+  */{\EBC}
+unaryNode::unaryNode(\Cons unaryNode& class_var)
+{\ob}
+{\cb}
+\Hendi
+\BL
+\BL
+\Hi 0 {\BLC}// no assignment operation{\ELC}
+   {\BLC}////////////////////////////////////////{\ELC}
+   {\BLC}//                                      {\ELC}
+   {\BLC}//    implement assignment operators    {\ELC}
+   {\BLC}//                                      {\ELC}
+   {\BLC}//                                      {\ELC}
+\BL
+unaryNode& unaryNode::operator=(\Cons unaryNode& class_var)
+{\ob}
+   \Retur *\Thi;
+{\cb}
+\Hendi
+\BL
+   {\BLC}////////////////////////////////////////{\ELC}
+   {\BLC}//                                      {\ELC}
+   {\BLC}//    implement the destructor          {\ELC}
+   {\BLC}//                                      {\ELC}
+   {\BLC}//                                      {\ELC}
+\BL
+unaryNode::~unaryNode()
+{\ob}
+{\cb}
+\BL
+   {\BLC}////////////////////////////////////////////{\ELC}
+   {\BLC}//                                          {\ELC}
+   {\BLC}//   implement other member functions here  {\ELC}
+   {\BLC}//                                          {\ELC}
+   {\BLC}//                                          {\ELC}
+\BL
+{\BBC}/**
+   display function to display the expression
+  */{\EBC}
+\BL
+\Voi unaryNode::Print(ostream& os) \Cons
+{\ob}
+   os 　 {\dq}({\dq} 　 pv_operator 　 pv_operand 　 {\dq}){\dq};
+{\cb}
+\BL
+{\BBC}/**
+   function to evaluate the expression
+  */{\EBC}
+\BL
+\In unaryNode::Evaluate() \Cons
+{\ob}
+   \I ( pv_operator == {\dq}-{\dq} )
+   {\ob}
+      \Retur -pv_operand.Evaluate();
+   {\cb}
+\BL
+   \I ( pv_operator == {\dq}+{\dq} )
+   {\ob}
+      \Retur pv_operand.Evaluate();
+   {\cb}
+\BL
+   \Thro {\dq}Error. Bad operand {\dq} + pv_operator + {\dq} in unaryNode{\dq};
+\BL
+   \Retur 0;
+{\cb}
+\EndCppCode

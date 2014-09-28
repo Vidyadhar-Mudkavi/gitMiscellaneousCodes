@@ -1,0 +1,90 @@
+\BeginCppCode
+\Hifnde _UNARYNODE_
+\Hdefin _UNARYNODE_
+{\BBC}/**
+\BL
+  *File: unaryNode.h
+\BL
+  *Description:
+\BL
+   this file declares class unaryNode
+\BL
+  *Version: 1.0
+\BL
+  *Dependencies:
+\BL
+  *Authors: Premalatha, Vidyadhar Mudkavi, CTFD, NAL
+\BL
+  *Date:
+  */{\EBC}
+\BL
+{\BLC}// system includes{\ELC}
+\BL
+{\BLC}// local includes{\ELC}
+\Hinclud {\dq}anExpr.h{\dq}
+\Hinclud {\dq}exprNode.h{\dq}
+\Hinclud {\dq}aString.h{\dq}
+\BL
+{\BLC}// const declarations{\ELC}
+\BL
+{\BLC}// function prototypes{\ELC}
+\BL
+{\BLC}// forward declarations{\ELC}
+\BL
+{\BLC}// begin class declaration{\ELC}
+\Clas unaryNode : \Publi exprNode
+{\ob}
+{\BLC}// make the handle a friend{\ELC}
+   \Frien \Clas anExpr;
+\BL
+   public:
+\BL
+   protected:
+\BL
+   private:
+\BL
+   {\BLC}// constructors{\ELC}
+\Hi 0 {\BLC}// no default behaviour{\ELC}
+      unaryNode(); {\BLC}// default{\ELC}
+\Hendi
+\BL
+\Hi 0 {\BLC}// both special construction and assignment are not needed{\ELC}
+      unaryNode(\Cons unaryNode& un);
+\BL
+   {\BLC}// assignment operator{\ELC}
+      unaryNode& operator=(\Cons unaryNode& un);
+\Hendi
+\BL
+   {\BLC}// this is the one invoked by anExpr (handle){\ELC}
+      unaryNode(\Cons aString& op, anExpr expr);
+\BL
+   {\BLC}// destructor{\ELC}
+      ~unaryNode();
+\BL
+   {\BLC}// output{\ELC}
+      \Voi Print(ostream& os) \Cons;
+\BL
+   {\BLC}// function to evaluate the expression{\ELC}
+      \In Evaluate() \Cons;
+\BL
+   {\BLC}// data{\ELC}
+      aString pv_operator;
+      anExpr  pv_operand;
+{\cb};
+\BL
+{\BLC}// include any inline code here{\ELC}
+\BL
+{\BBC}/**
+   declare any typedef statements here
+     ex: typedef aVortex areVortices;
+   so that we can declare
+     areVortices v1, v2, v3;
+  */{\EBC}
+                              {\BLC}//                 {\ELC}
+                              {\BLC}//      {\bs}{\bs}^//      {\ELC}
+                              {\BLC}//     o(!_!)o     {\ELC}
+                              {\BLC}// --m--  o  --m-- {\ELC}
+                              {\BLC}//                 {\ELC}
+\BL
+\Hendi {\BLC}//_UNARYNODE_{\ELC}
+\EndCppCode

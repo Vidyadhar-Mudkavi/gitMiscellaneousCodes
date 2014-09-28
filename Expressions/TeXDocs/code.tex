@@ -1,0 +1,58 @@
+% the expr example
+
+\input c:/user/vm/tex/texfmts/mydefs.h
+
+\CDrivefalse
+\CManual
+\LoadFiles/21/
+\NamedBlock
+\TwoColumns
+
+\def\OR{{\tt ||}}
+\def\doit'#1'{{\bgroup\it#1\egroup}}
+
+
+\PageHeads/0/Introduction to C++ for Scientific Programmers%
+  /Premalatha and Vidyadhar Mudkavi/
+
+\def\CodeRule{
+  \medskip
+  \centerline{\hbox to 4truein{\hrulefill}}
+  \smallskip}
+
+\def\CodeRuleCaption/#1/{
+  \bigskip
+  \centerline{\hbox to 3truein{\hrulefill}}
+  \centerline{#1}
+  \smallskip
+  \centerline{\hbox to 4truein{\hrulefill}}
+  \medskip
+  \smallskip}
+
+
+% footer on page 1
+\InsertFooterInfo//Premalatha\&Vidyadhar, CTFD, NAL/Rev: \today/
+%\InsertFooterpv
+
+\def\InsertCodeFile/#1/{
+   \subsection #1
+
+   \input #1.tex
+   \vfill\eject
+}
+
+\InsertCodeFile/exprNode.h/
+\InsertCodeFile/exprNode.cpp/
+\InsertCodeFile/anExpr.h/
+\InsertCodeFile/anExpr.cpp/
+\InsertCodeFile/intNode.h/
+\InsertCodeFile/intNode.cpp/
+\InsertCodeFile/unaryNode.h/
+\InsertCodeFile/unaryNode.cpp/
+\InsertCodeFile/binaryNode.h/
+\InsertCodeFile/binaryNode.cpp/
+\bye
+
+
+
+
